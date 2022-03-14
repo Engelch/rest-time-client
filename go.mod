@@ -3,7 +3,7 @@ module github.com/engelch/restTimeClient
 go 1.17
 
 require (
-	github.com/engelch/go_libs/v2 v2.2.5
+	github.com/engelch/go_libs/v2 v2.3.0
 	github.com/urfave/cli/v2 v2.3.0
 )
 

@@ -11,6 +11,8 @@ github.com/engelch/go_libs/v2 v2.2.4 h1:cEIqEhlNxFfgiZkbIUEdhaPJYklCa4yJ/2ArcLv5
 github.com/engelch/go_libs/v2 v2.2.4/go.mod h1:rc3zx9KX9OOynSMZQSrsJrSztxKDXwTW1/W9hHXkUx4=
 github.com/engelch/go_libs/v2 v2.2.5 h1:5R/drihFC/98XvTLNwC4Cfphieaub1PTHqPkn+wKZEc=
 github.com/engelch/go_libs/v2 v2.2.5/go.mod h1:rc3zx9KX9OOynSMZQSrsJrSztxKDXwTW1/W9hHXkUx4=
+github.com/engelch/go_libs/v2 v2.3.0 h1:bwqDREhGgycDvh5ascwL3+VeR2Zn4DBfEgjlBweQ6Uo=
+github.com/engelch/go_libs/v2 v2.3.0/go.mod h1:rc3zx9KX9OOynSMZQSrsJrSztxKDXwTW1/W9hHXkUx4=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/russross/blackfriday/v2 v2.0.1 h1:lPqVAte+HuHNfhJ/0LC98ESWRz8afy9tM/0RK8m9o+Q=
