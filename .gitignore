@@ -1,0 +1,16 @@
+*~
+*.key
+*.csr
+*.pem
+glide.*
+vendor/
+build/
+.gitsecret/keys/random_seed
+!*.secret
+log/
+README.pdf
+.DS_Store
+.idea/
+.touchfile
+.ionide/
+key*
