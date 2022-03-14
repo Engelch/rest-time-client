@@ -14,7 +14,7 @@ import (
 	cli "github.com/urfave/cli/v2"
 )
 
-const appVersion = "0.1.0"
+const appVersion = "0.1.2"
 const appName = "restTimeClient"
 
 // These CLI options are used more than once below. So let's use constants that we do not get misbehaviour
@@ -150,7 +150,7 @@ func main() {
 			if err != nil {
 				fmt.Println("Verification FAILED!")
 			} else {
-				fmt.Println("Verification successful.")
+				fmt.Println("Verification successful. Message stored as data.txt, signature as data.sig.\nPlease verify again with something like:\nopenssl dgst -verify key1.pub -signature data.sig data.txt")
 			}
 		}
 		return nil
