@@ -4,6 +4,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -13,7 +14,7 @@ import (
 	cli "github.com/urfave/cli/v2"
 )
 
-const appVersion = "0.0.14"
+const appVersion = "0.0.16"
 const appName = "restTimeClient"
 
 // These CLI options are used more than once below. So let's use constants that we do not get misbehaviour
@@ -132,15 +133,20 @@ func main() {
 			ce.LogErr(":" + ce.CurrentFunctionName() + ":marshall error 1:" + err.Error())
 			return err
 		}
-		digest := ce.Sha256bytes2bytes(marshalledData)
 		err = os.WriteFile("data.txt", marshalledData, 0644)
-		ce.ExitIfError(err, 115, "Error writing file")
+		ce.ExitIfError(err, 115, "Error writing file data.txt")
 
+		signatureByte, err := base64.StdEncoding.DecodeString(response.Signature)
+		err = os.WriteFile("data.sig", signatureByte, 0644)
+		ce.ExitIfError(err, 116, "Error writing file data.sig")
+
+		digest := ce.Sha256bytes2bytes(marshalledData)
 		fmt.Printf("Digest for Data is: %x\n", digest)
+
 		if pubKeyFile != "" {
 			pubkey, err := ce.LoadPublicKey(pubKeyFile)
 			ce.ExitIfError(err, 110, "Loading public key")
-			err = ce.VerifyBase64String(pubkey, response.Signature, string(marshalledData))
+			err = ce.Verify115Base64String(pubkey, response.Signature, string(marshalledData))
 			if err != nil {
 				fmt.Println("Verification FAILED!")
 			} else {
