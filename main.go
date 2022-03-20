@@ -14,7 +14,7 @@ import (
 	cli "github.com/urfave/cli/v2"
 )
 
-const appVersion = "0.1.2"
+const appVersion = "0.1.3"
 const appName = "restTimeClient"
 
 // These CLI options are used more than once below. So let's use constants that we do not get misbehaviour
